@@ -1,0 +1,173 @@
+{
+  "object": "page",
+  "id": "676755ed-13c8-4868-ae2f-747e5de00e60",
+  "created_time": "2024-07-26T23:04:00.000Z",
+  "last_edited_time": "2024-07-26T23:05:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "726cdcac-5c56-4679-91e8-d5e76b4388ad"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "726cdcac-5c56-4679-91e8-d5e76b4388ad"
+  },
+  "cover": null,
+  "icon": {
+    "type": "emoji",
+    "emoji": "🎬"
+  },
+  "parent": {
+    "type": "database_id",
+    "database_id": "dbf325fc-2bb7-452e-b152-9c9bfaeec93b"
+  },
+  "archived": false,
+  "in_trash": false,
+  "properties": {
+    "Genre": {
+      "id": "I~kz",
+      "type": "multi_select",
+      "multi_select": []
+    },
+    "Director": {
+      "id": "KBzK",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Platform": {
+      "id": "NyKL",
+      "type": "multi_select",
+      "multi_select": []
+    },
+    "Date watched": {
+      "id": "PlAN",
+      "type": "date",
+      "date": null
+    },
+    "Duration": {
+      "id": "URye",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "The length of the movie \"Kedi\" is approximately 1 hour and 20 minutes.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "The length of the movie \"Kedi\" is approximately 1 hour and 20 minutes.",
+          "href": null
+        }
+      ]
+    },
+    "AI summary": {
+      "id": "ZmAx",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "No content",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "No content",
+          "href": null
+        }
+      ]
+    },
+    "Release date": {
+      "id": "gaDM",
+      "type": "date",
+      "date": null
+    },
+    "Most recently watched": {
+      "id": "iaYn",
+      "type": "rollup",
+      "rollup": {
+        "type": "date",
+        "date": null,
+        "function": "latest_date"
+      }
+    },
+    "🏷️ Tags": {
+      "id": "r%3C%40P",
+      "type": "relation",
+      "relation": [
+        {
+          "id": "5aab14a6-c611-406d-ad9d-8d5b868b842b"
+        }
+      ],
+      "has_more": false
+    },
+    "Rec count": {
+      "id": "ta%5B%3F",
+      "type": "formula",
+      "formula": {
+        "type": "number",
+        "number": 0
+      }
+    },
+    "URL": {
+      "id": "uNkP",
+      "type": "url",
+      "url": null
+    },
+    "Rating": {
+      "id": "vTon",
+      "type": "rich_text",
+      "rich_text": []
+    },
+    "🍿 Movies watched": {
+      "id": "v%5CHX",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "👥 Recommender": {
+      "id": "vtUW",
+      "type": "relation",
+      "relation": [],
+      "has_more": false
+    },
+    "Name": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Kedi",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Kedi",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/Kedi-676755ed13c84868ae2f747e5de00e60",
+  "public_url": null
+}
