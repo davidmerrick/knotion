@@ -1,0 +1,27 @@
+# This workflow is used to generate a release whenever a new tag is created.
+
+on:
+  push:
+    tags:
+      # Filter to only the version tags we want, i.e. 1.0.1
+      - '*.*.*'
+
+name: Create Release on New Version Tag
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
