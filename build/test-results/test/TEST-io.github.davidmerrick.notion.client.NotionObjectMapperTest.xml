@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="io.github.davidmerrick.notion.client.NotionObjectMapperTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-27T02:47:58" hostname="Davids-MacBook-Pro-2.local" time="0.341">
-  <properties/>
-  <testcase name="Deserialize a query resut" classname="io.github.davidmerrick.notion.client.NotionObjectMapperTest" time="0.341"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
