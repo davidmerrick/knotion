@@ -1,6 +1,8 @@
 group = "io.github.davidmerrick.knotion"
 
 plugins {
+    `java-library`
+    `maven-publish`
     kotlin("jvm") version "1.9.23"
 }
 
@@ -38,6 +40,23 @@ dependencies {
 
     testImplementation("org.testng:testng:7.7.1")
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+
+            groupId = "io.github.davidmerrick"
+            artifactId = "knotion"
+            version = project.version.toString() // 👈 Comes from Reckon
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}
+
 
 tasks.withType<Test> {
     useTestNG()
