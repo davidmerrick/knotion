@@ -1,11 +1,5 @@
 package io.github.davidmerrick.knotion.client
 
-import com.fasterxml.jackson.annotation.JsonInclude
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.fasterxml.jackson.module.kotlin.KotlinModule
 import io.github.davidmerrick.knotion.model.Icon
 import io.github.davidmerrick.knotion.model.NotionPage
 import io.github.davidmerrick.knotion.model.NotionPatch
@@ -27,7 +21,7 @@ import io.ktor.client.request.setBody
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
-import io.ktor.serialization.jackson.jackson
+import io.ktor.serialization.jackson.JacksonConverter
 import mu.KotlinLogging
 
 private const val NotionHost = "api.notion.com"
@@ -41,15 +35,10 @@ class NotionClient(
 
     private val client = HttpClient(CIO) {
         install(ContentNegotiation) {
-            jackson {
-                configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-                propertyNamingStrategy = SnakeCaseStrategy()
-                // Don't write nulls so we don't patch things empty
-                setSerializationInclusion(JsonInclude.Include.NON_NULL)
-                registerModule(KotlinModule.Builder().build())
-                registerModule(JavaTimeModule())
-                configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
-            }
+            register(
+                ContentType.Application.Json,
+                JacksonConverter(NotionObjectMapper)
+            )
         }
         install(Logging) {
             level = LogLevel.INFO
