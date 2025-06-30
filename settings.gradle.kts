@@ -11,4 +11,5 @@ extensions.configure<org.ajoberstar.reckon.gradle.ReckonExtension> {
         calcScopeFromProp()
             .or(calcScopeFromCommitMessages())
     )
+    setDefaultInferredScope("minor")
 }
