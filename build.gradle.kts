@@ -48,12 +48,19 @@ publishing {
 
             groupId = "io.github.davidmerrick"
             artifactId = "knotion"
-            version = project.version.toString() // 👈 Comes from Reckon
+            version = project.version.toString()
         }
     }
 
     repositories {
-        mavenLocal()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/davidmerrick/knotion")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }
 
