@@ -49,6 +49,14 @@ tasks.withType<Test> {
     useTestNG()
 }
 
+tasks.named("publish") {
+    doFirst {
+        if (version.toString().endsWith("-SNAPSHOT")) {
+            throw GradleException("Publishing SNAPSHOT versions to GitHub Packages is disabled.")
+        }
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>("default") {
