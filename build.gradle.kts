@@ -41,14 +41,18 @@ dependencies {
     testImplementation("org.testng:testng:7.7.1")
 }
 
+val buildJar by tasks.creating(Jar::class) {
+    from(tasks.compileKotlin)
+}
+
+tasks.withType<Test> {
+    useTestNG()
+}
+
 publishing {
     publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["java"])
-
-            groupId = "io.github.davidmerrick"
-            artifactId = "knotion"
-            version = project.version.toString()
+        create<MavenPublication>("default") {
+            artifact(buildJar)
         }
     }
 
@@ -62,9 +66,4 @@ publishing {
             }
         }
     }
-}
-
-
-tasks.withType<Test> {
-    useTestNG()
 }
